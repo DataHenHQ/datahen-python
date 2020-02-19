@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="datahen",
-    version="0.3",
+    version="0.3.1",
     author="Datahen",
     author_email="services@datahen.com",
     description="Datahen package",

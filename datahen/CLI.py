@@ -173,5 +173,8 @@ class CLIScraperPage:
 
     pp.pprint(output)
 
-if __name__ == '__main__':
+def main():
   DatahenCLI()
+
+if __name__ == '__main__':
+  main()
