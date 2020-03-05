@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="datahen",
-    version="0.3.1",
+    version="0.4",
     author="Datahen",
     author_email="services@datahen.com",
     description="Datahen package",
@@ -15,7 +15,7 @@ setuptools.setup(
     packages=setuptools.find_packages(),
     entry_points ={ 
         'console_scripts': [ 
-            'datahen = datahen.CLI:main'
+            'hen-python = datahen.CLI:main'
         ] 
     }, 
     classifiers=[
@@ -24,6 +24,7 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     install_requires=[
+      'beautifulsoup4',
       'requests'
     ],
     python_requires='>=3.6',

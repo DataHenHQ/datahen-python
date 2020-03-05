@@ -19,3 +19,13 @@ def get_job_history(scraper_name):
     raise ValueError(f"Scraper named {scraper_name} was not found")
   else:
     return result
+
+def seeding_update(job_id, options):
+  client = API.BaseClient()
+
+  body = {}
+  body['outputs'] = options['outputs']
+  body['pages'] = options['pages']
+  body['seeding_status'] = options['status']
+
+  return client.put(f"/jobs/{job_id}/seeding_update", body)

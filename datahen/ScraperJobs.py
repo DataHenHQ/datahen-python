@@ -1,5 +1,15 @@
 from datahen import API
 
+def find(scraper_name, options = {}):
+  client = API.BaseClient()
+
+  result = client.get(f"/scrapers/{scraper_name}/current_job", options)
+  
+  if 'message' in result and result['message'] == "dbr: not found":
+    raise ValueError(f"Scraper with name {scraper_name} or current job was not found")
+  else:
+    return result
+
 def get_by_id(job_id):
   client = API.BaseClient()
   input_job_id = str(job_id)
