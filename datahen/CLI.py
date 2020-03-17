@@ -140,6 +140,7 @@ class CLIScraper:
 
     pp.pprint(output)
 
+
 class CLIScraperPage:
   def __init__(self):
     parser = argparse.ArgumentParser(description='Actions related to scraper pages')
