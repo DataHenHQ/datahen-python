@@ -1,3 +1,5 @@
+from __future__ import absolute_import
+
 import requests
 import os
 import json
@@ -73,7 +75,12 @@ class Base():
         ans = requests.delete(url, **options).text
         return ans
 
-    def post(self, uri, post_data,options):
+    def post(self, uri,options):
         url = self.make_url(uri)
-        ans = requests.post(url, data=post_data, **options).text
+        ans = requests.post(url, **options).text
+        return ans
+
+    def put(self, uri,options):
+        url = self.make_url(uri)
+        ans = requests.put(url, **options).text
         return ans

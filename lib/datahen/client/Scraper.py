@@ -4,13 +4,13 @@ import sys
 class Scraper(Base):
 
     def find(self, scraper_name):
-        return self.get("/scrapers/{}".format(scraper_name))
+        return self.get("/scrapers/{}".format(scraper_name),self._options)
 
     def all(self,opts={}):
         opts.update(self._options)
         return self.get("/scrapers",opts)
 
-    #@todo test this function
+    #@todo tests this function
     def create(self,scraper_name, git_repository, opts={}):
         opts.update(self._options)
         body = {}
@@ -27,11 +27,11 @@ class Scraper(Base):
         if 'schedule' in opts and opts['schedule']  :   body['schedule'] = opts['schedule']
         if 'timezone' in opts and opts['timezone'] : body['timezone'] = opts['timezone']
 
-    # @todo to finish and test this function
+    # @todo to finish and tests this function
     def update(self,scraper_name, opts={}):
         pass
 
-    # @todo to finish and test this function
+    # @todo to finish and tests this function
     def delete(self,scraper_name, opts={}):
         opts.update(self._options)
         return self.delete("/scrapers/{}".format(scraper_name))
